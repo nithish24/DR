@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block header%}
+<div class="tit">
+	Add Patient
+</div>
+<link rel="stylesheet" type="text/css" href="{% static 'CSS/form.css' %}">
+	<script type="text/javascript">
+		img_ext=['jpg','png','jpeg'];
+		file_ext=['pdf','txt','docx'];
+
+		function check_form(event)
+		{
+			p_age = document.getElementById('patient_age').value;
+			diab_dur = document.getElementById('diab_duration').value;
+			p_age = parseInt(p_age)
+			diab_dur = parseInt(diab_dur)
+			if(p_age < diab_dur)
+			{
+				alert("Patient age cannot be less than Diabeties Duration");
+				event.preventDefault();
+			}
+
+			if(p_age == diab_dur)
+			{
+				alert("Patient age cannot be same as Diabeties Duration");
+				event.preventDefault();
+			}
+
+			profile_pic_uploaded = document.getElementById('patient_photo').value;
+			dr_report_uploaded =  document.getElementById('diab_report').value;
+
+			pic_ext = profile_pic_uploaded.split('.').pop();
+			dr_ext = dr_report_uploaded.split('.').pop();
+
+			phone_val = document.getElementById('phone').value;
+			if(phone_val.match(/^[0-9]+$/))
+			{
+				if (phone_val.length!=10){
+					alert("Invalid Phone Number");
+					event.preventDefault();
+				}
+				
+			}
+
+
+			if(!(img_ext.includes(pic_ext) && file_ext.includes(dr_ext)))
+			{	event.preventDefault();
+				alert('File Supported formats are:\n\nImage file : PNG, JPG, JPEG\n\nDocument : TXT, PDF, DOCX');
+			}
+
+
+
+
+		}
+	</script>
+{%endblock header%}
+
+{% block body %}
+	{% if failure %}
+		<script type="text/javascript">
+			alert("ENTRY ALREADY EXISTS!!!")
+		</script>
+	{% endif %}
+
+
+	<div class="form1">
+		<form  action="/insert" method="post" enctype="multipart/form-data">
+		    {% csrf_token %}
+			<div class="ex">
+		        <table>
+		            {{ form1.as_table }}
+				</table></div>
+		    <input type="submit" value="Submit" onclick="check_form(event)">
+		</form>
+	</div>
+{% endblock body %}

@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DR REPORT</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+<br/>
+        <center><h2>Patient Personal Details</h2></center>
+        <br/>
+        <table class="table table-bordered" >
+            {% for personal in ppd %}
+                <tr><td>Patient_ID</td><td>P000{{personal.patient_id}}</td></tr>
+                <tr><td>Name</td><td>{{personal.patient_name}}</td></tr>
+                <tr><td>Age</td><td>{{personal.patient_age}}</td></tr>
+                <tr><td>Gender</td><td>{{personal.gender}}</td></tr>
+                <tr><td>Phone Number</td><td>{{personal.phone_no}}</td></tr>
+                <tr><td>Blood Group</td><td>{{personal.blood_group}}</td></tr>
+                <tr><td>Address</td><td>{{personal.address}}</td></tr>
+            {% endfor %}
+        </table>
+    <br/><br/>
+    <center><h2>Patient Diabeties History</h2></center>
+        <br/>
+        <table class="table table-bordered" >
+            {% for history in pdh %}
+                <tr><td>Diabetic Type</td><td>{{history.diabetic_type}}</td></tr>
+                <tr><td>Sugar Fasting Value (in mg/dL)</td><td>{{history.sugar_Fasting_value}}</td></tr>
+                <tr><td>Sugar Non Fasting Value (in mg/dL)</td><td>{{history.sugar_Non_fasting_value}}</td></tr>
+                <tr><td>Duration of Diabeties (in years)</td><td>{{history.time_duration}}</td></tr>
+            {% endfor %}
+        </table>
+
+        <br/><br/>
+            {% if status %}
+                <center><h2>Diabetic Retinopathy Details</h2></center>
+                <br/>
+                <table class="table table-bordered">
+                    {% for i in dr %}
+                    <tr><td>Left Retina Photo</td><td style="text-align:center;"><img src="{{i.left_retina_photo.url}}" height="150" width="150"></td></tr>
+                    <tr><td>Left Class Predicted </td><td style="text-align:center;">{{i.left_predicted_stage}}</td></tr>
+                    <tr><td>Right Retina Photo</td><td style="text-align:center;"><img src="{{i.right_retina_photo.url}}" height="150" width="150"></td></tr>
+                    <tr><td>Right Class Predicted</td><td style="text-align:center;">{{i.right_predicted_stage}}</td></tr>
+                    {% endfor %}
+                </table>
+            {% endif %}
+</body>
+</html>

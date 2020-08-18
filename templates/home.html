@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block header%}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{% static 'CSS/navbar.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="{% static 'CSS/home.css' %}">
+<script type="text/javascript">
+		function validate(event)
+		{
+			s_val = document.getElementById('search').value
+			console.log(s_val.length)
+			if(s_val.match(/^[0-9]+$/))
+			{
+				if (s_val.length!=10){
+					alert("Please enter 10 number")
+					event.preventDefault()
+				}
+			}
+			else if (s_val.match(/^[0-9a-zA-Z]+$/))
+			{
+				if(!s_val.match(/^[a-z]+$/i))
+				{
+					alert("please enter phone number or patient name. Alphanumerics not allowed")
+  					event.preventDefault()
+				}
+
+			}
+		}
+		var i=0;
+		var images = [];
+		var time=3000;
+
+		images[0]= '/static/images/blue.jpeg';
+		images[1]= '/static/images/books.jpeg';
+
+		function changeImg()
+	{
+		document.slide.src = images[i];
+
+		if(i < images.length-1)
+		{
+		    i++;
+		} else
+		{
+		    i = 0;
+		}
+
+		setTimeout("changeImg()", time);
+	}
+		window.onload = changeImg;
+</script>
+{% endblock header %}
+{% block body %}
+<img name="slide" class="slides">
+<div class="blur"></div>
+<div class="bod">
+    <div class="dia">
+        <h2>Diabetic Retinopathy</h2>
+        <p>
+            Diabetic Retinopathy is an eye disorder which is caused due to high level of glucose in the blood.
+Due to high glucose and blood pressure the blood vessels in the eye rupture and cause damage to
+the tissue. This eye disease is curable when diagnosed at an early stage. It’s a systemic disease,
+which affects up to 80% of all patients who have had diabetes for 20 years or more. Despite these
+intimidating statistics, research indicates that at least 90% of these new cases could be reduced if
+there were proper and vigilant treatment and monitoring of the eyes. Diagnosis of this disease is
+done with a method called as fluorescein angiography. Fluorescein angiography allows study of
+circulation of the retina and choroid in the diseased states. Photographs of the retina are taken after
+intravenous injection of sodium fluorescein, an orange-red crystalline hydrocarbon that diffuses
+though most of the body fluids. It is available as a sterile aqueous solution. Fluorescence is observed
+when a molecule is struck by a photon and the molecule is excited by this. The molecule then
+releases a photon to return back to its original state. Typically, the compound used is Sodium
+Fluorescein which emits yellow-green wavelength of light when it is excited. This wavelength of light
+is captured by a camera with a yellow-green filter attached to the lens. This image is then analysed
+to detect certain abnormalities that are the indicators of Diabetic Retinopathy. These are,
+abnormalities in the blood vessels, optic nerve, or retina, changes in eye pressure or overall vision,
+new blood vessels, retinal detachment and scar tissue. This method requires a complicated
+procedure and trained and experienced people to detect the disease which makes it a difficult and
+expensive for everyone to get diagnosed.
+        </p>
+    </div>
+    <div class="flu">
+        <h2>Fluorescein angiography</h2>
+        <p>
+            Fluorescein angiography (FA) allows study of the circulation of the retina and choroid in normal and
+diseased states. Photographs of the retina are taken after intravenous injection of sodium
+fluorescein, an orange-red crystalline hydrocarbon with a molecular weight of 376 daltons that
+diffuses through most of the body fluids. It is available as 2–3 mL of 25% concentration or 5 mL of
+10% concentration in a sterile aqueous solution. It is eliminated primarily through the liver and
+kidneys within 24–36 hours via the urine. Eighty percent of the fluorescein is protein-bound,
+primarily to albumin, and not available for fluorescence; the remaining 20% is unbound and
+circulates in the vasculature and tissues of the retina and choroid, where it can be visualized.
+Fluorescence occurs when a molecule is excited by light of a certain wavelength that raises the
+molecule to a higher energy state and then allows it to release a photon of light to bring it back to its
+original state. To image this fluorescence, special excitation and barrier filters are required. Sodium
+fluorescein fluoresces at a wavelength of 520–530 nm (green) after excitation by a light of 465–490
+nm (blue). To obtain a fluorescein angiogram, white light from the camera flash unit is passed
+through a blue (excitatory) filter, and blue light enters the eye. The blue light, with its wavelength of
+465–490 nm, excites the unbound fluorescein molecules circulating in the retinal and choroidal
+layers or that have leaked out of the vasculature and stimulates them to emit a longer-wavelength
+yellow-green light (520–530 nm). Both the emitted yellow-green fluorescence and some degree of
+reflected blue light from structures that do not contain fluorescein exit the eye and return to the
+camera. A yellow-green (barrier) filter on the camera lens blocks the reflected blue light, permitting
+only the yellow-green light, which has originated from the fluorescein molecules, into the camera.
+        </p>
+    </div>
+</div>
+{% endblock body %}

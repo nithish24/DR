@@ -1,0 +1,244 @@
+
+body{
+margin-top:7%;
+Margin-left:25%;
+background-color: #050103;
+background-image: url("https://www.transparenttextures.com/patterns/brick-wall-dark.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+width:50%;
+border: 1px solid #D68910;
+border-radius: 15px;
+height:inherit;
+box-shadow:5px 5px 50px 5px black;
+
+}
+
+.al tr{
+margin-left:50px;
+}
+
+
+.al th{
+text-align:left;
+}
+
+.al td{
+text-align:left;
+margin-top:40px;
+
+}
+html{
+background-color: #00070a;
+background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+div.al{
+overflow-x:scroll;
+white-space: nowrap;
+position:relative;
+}
+div.al div{
+overflow-x:hidden;
+overflow-y: hidden;
+
+  color: black;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+div.al::-webkit-scrollbar{
+display:none;
+}
+
+div.al{
+-ms-overflow-style: none;
+}
+.al table{
+width:80%;
+margin-left: 10%;
+}
+.al table center{
+text-align:left;
+margin-left:20%;
+margin-right:auto;
+font-size:20px;
+border:1px solid black;
+}
+
+.al h2{
+padding:10px;
+margin-left:-10%;
+text-align:center;
+color:black;
+background:#D68910;
+width:115%;
+}
+
+.ppd{
+margin-left:8%;
+margin-right:10%;
+margin-top:5%;
+margin-bottom:10%;
+width:80%;
+background-color:#e6f2ff;
+border: none;
+border-radius: 5px;
+ box-shadow:5px 5px 50px 5px black;
+ height:inherit;
+}
+
+.dh{
+margin-left:8%;
+margin-right:10%;
+margin-top:5%;
+margin-bottom:10%;
+background-color:#e6f2ff;
+width:80%;
+height:inherit;
+border: none;
+border-radius: 5px;
+ box-shadow:5px 5px 30px 5px black;
+}
+.dh tr{
+
+margin:10px;}
+.drd{
+margin-left:8%;
+margin-right:10%;
+margin-top:5%;
+margin-bottom:10%;
+width:80%;
+height:inherit;
+border: none;
+background-color:#e6f2ff;
+border-radius: 5px;
+ box-shadow:5px 5px 30px 5px black;
+}
+.print{
+margin-left:75%;
+}
+.pop{
+float:left;
+width:100%;
+
+}
+
+.pop button{
+font-weight:bold;
+margin-left:30%;
+margin-bottom:20px;
+padding: 15px 25px;
+width:40%;
+z-index:1;
+outline:none;
+  font-size: 16px;
+  font-family: Perpetua, Baskerville, "Big Caslon", "Palatino Linotype", Palatino, "URW Palladio L", "Nimbus Roman No9 L", sans-serif;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: black;
+  background-color: #D68910;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 3px #999;
+}
+.pop button:hover{
+background-color:black;
+color:#D68910;
+}
+.pop button:active{
+transform:translateY(4px);
+}
+
+.center{
+display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 15%;
+}
+
+.ppd:hover, .dh:hover, .drd:hover{
+transform: scale(1.05);
+}
+.ari{
+margin-top:25%;
+height:70px;
+font-size: 20px;
+
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: black;
+  background-color: #4d4d4d;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 2px 3px #999;
+}
+.ari:hover{
+background-color:#0d0d0d;
+}
+.delete{
+margin-left:80px;
+width:30%;
+}
+.edit{
+margin-left:30px;
+width:30%;
+}
+
+.vdr{
+font-size:12px;
+text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #4d4d4d;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 2px 3px #999;
+}
+.ad{
+margin-top:10%;
+}
+.add:link{
+text-decoration:none;
+}
+
+.add{
+font-size:80px;
+font-weight:bold;
+color:black;
+}
+
+.ppd img{
+margin-left:-65%;
+}
+
+.center{
+display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 15%;
+}
+.print{
+font-weight:bold;
+margin-top:20px;
+
+margin-bottom:20px;
+padding: 10px 25px;
+width:50%;
+z-index:1;
+  font-size: 16px;
+  font-family: Perpetua, Baskerville, "Big Caslon", "Palatino Linotype", Palatino, "URW Palladio L", "Nimbus Roman No9 L", sans-serif;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: black;
+  background-color: #D68910;
+  border: none;
+  border-radius:10px;
+}
+.print:active{
+transform:translateY(3px);
+}

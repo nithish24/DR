@@ -1,0 +1,86 @@
+body{
+margin-top:10%;
+Margin-left:25%;
+background-color:teal;
+width:50%;
+border: 1px solid #D68910;
+border-radius: 5px;
+height:350px;
+box-shadow:5px 5px 50px 5px black;
+}
+html{
+background-color: #00070a;
+background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+.pid{
+padding:5px;
+height:30px;
+font-size:20px;
+background:#D68910;
+text-align:center;
+}
+.addr *{
+display:inline;
+margin:10px;a
+}
+.adddr *{
+display:inline;
+margin:7px;
+}
+.adddr div{
+padding:5px 9.5px;
+margin-left:10%;
+color:black;
+font-weight:bold;
+}
+
+.addr div{
+padding:5px;
+margin-left:10%;
+color:black;
+font-weight:bold;
+/*border:1px solid grey;
+background:#1a1a1a;
+color:#D68910;*/
+}
+
+.sub{
+margin-top:2.5%;
+margin-left:20%;
+font-weight:bold;
+position:fixed;
+padding: 15px 25px;
+width:10%;
+font-size: 15px;
+text-align: center;
+cursor: pointer;
+outline: none;
+background:#1a1a1a;
+color:#D68910;
+border: none;
+border-radius: 5px;
+box-shadow: 0 3px #999;
+}
+
+.sub:hover{
+background:black;
+color:#D68910;
+}
+
+.sub:active{
+transform:translatey(2px);
+}
+
+.messages {
+    margin-top:5%;
+    background-color: #953;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 15px;
+    border-radius:5px;
+    width:90.5%;
+}

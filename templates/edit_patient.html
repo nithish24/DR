@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+	Edit Patient
+{% endblock title %}
+
+{%block header%}
+<div class="tit">
+	Edit Patient
+</div>
+<link rel="stylesheet" type="text/css" href="{% static 'CSS/form.css' %}">
+{%endblock header%}
+
+{% block body %}
+<script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+        document.getElementById("id_gender").disabled = true;
+        document.getElementById("id_blood_group").disabled = true;
+        document.getElementById("id_patient_photo").disabled = true;
+    });
+    function enable(event) {
+        document.getElementById('id_patient_id').disabled = false;
+    }
+</script>
+    <div class="form2">
+		<form  action="/update" method="POST" enctype="multipart/form-data">
+		    {% csrf_token %}
+		        <table>
+		            {{ ppd.as_table }}
+		        </table>
+                <table>
+		            {{ pdh.as_table }}
+		        </table>
+                {% if flag %}
+                <h4>Note: if any one Retina photo is to be updated then please update both the retina images</h4>
+                <table>
+		            {{ dr.as_table }}
+		        </table>
+                {% endif %}
+			<div class="ggg">
+            <input type="submit" value="Submit" onclick="enable(event)">
+
+				<button onclick="window.history.back()">Cancel</button></div></form>
+	</div>
+{% endblock body %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block header %}
+<link rel="stylesheet" type="text/css" href="{% static 'CSS/add.css' %}">
+	<script type="text/javascript">
+		img_ext=['jpg','png','jpeg'];
+
+		function check_form(event)
+		{
+			left_pic_uploaded = document.getElementById('left_retina_photo').value;
+			right_pic_uploaded =  document.getElementById('right_retina_photo').value;
+
+			left_ext = left_pic_uploaded.split('.').pop();
+			right_ext = right_pic_uploaded.split('.').pop();
+
+
+			if(!(img_ext.includes(left_ext) && img_ext.includes(right_ext)))
+			{
+				event.preventDefault();
+				alert('File Supported formats are:\n\nImage file : PNG, JPG, JPEG\n\nDocument : TXT, PDF, DOCX');
+			}
+
+		}
+	</script>
+{% endblock header %}
+
+
+{% block body %}
+
+<h4 class="pid">Patient id: {{id}}</h4>
+<form action="/addDR/{{id}}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+<div class="adddr">
+    <div>Upload Left Retina image photo</div><p>{{form.left_retina_photo}}</p></div>
+<div class="addr">
+    <div>Upload Right Retina image photo</div>{{form.right_retina_photo}}
+</div>
+    <input class="sub" type="submit" value="UPLOAD" onclick="check_form(event)">
+</form>
+{% endblock body %}

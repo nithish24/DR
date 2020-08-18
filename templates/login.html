@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>User Login</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'CSS/login-css.css' %}">
+    <link href='https://fonts.googleapis.com/css?family=Bellota' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script type="text/javascript">
+        function check(event)
+        {
+            u_name = document.getElementById('u_name').value;
+            u_pass = document.getElementById('u_pass').value;
+            load_1 = document.getElementById('but_1')
+            load_2 = document.getElementById('but_2')
+            if( (u_name.length !=0) && (u_pass.length !=0)){
+                load_1.style.display = "block";
+                load_2.style.display = "none";
+            }
+        }
+    </script>
+</head>
+
+<body>
+<center>
+<div class="card">
+    <div class="container">
+        <span class="DR-span">DIABETIC RETINOPATHY</span><br/>
+
+        {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+        {% endif %}
+        <table>
+
+            <tr>
+                    <img src="/static/images/user icon.jpg" alt="IMG">
+            </tr>
+            <tr>
+
+            <td>
+                <form action="/login" method="POST">
+
+                    {% csrf_token %}
+                    <label class="form-header">LOGIN</label><br/><br/><br/>
+                    <label class="label">Username</label><br/><br/>
+                    <input type="text" name="username" class="user_input"  id = "u_name"required ><br/><br/><br/>
+                    <label class="label">Password</label><br/><br/>
+                    <input type="password" name="password" class="user_input"  id = "u_pass" required><br/><br/><br/>
+                    <button type="submit" value="Login" class="submit-btn" id="but_1" style="display:none;background-color:black;">Loading <i class="fa fa-refresh fa-spin"></i></button>
+                    <button type="submit" value="Login" class="submit-btn" id="but_2" onclick="check(event)">LOGIN</button>
+                </form>
+
+            </td>
+        </tr>
+    </table>
+    </div>
+</div>
+</center>
+</body>
+</html>

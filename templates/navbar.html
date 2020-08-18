@@ -1,0 +1,62 @@
+<html>
+{% load static %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{% static 'CSS/navbar.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<header>
+    <script type="text/javascript">
+		function validate(event)
+		{
+			s_val = document.getElementById('search').value
+			console.log(s_val.length)
+			if(s_val.match(/^[0-9]+$/))
+			{
+				if (s_val.length!=10){
+					alert("Please enter 10 number")
+					event.preventDefault()
+				}
+			}
+			else if (s_val.match(/^[0-9a-zA-Z]+$/))
+			{
+				if(!s_val.match(/^[a-z]+$/i))
+				{
+					alert("please enter phone number or patient name. Alphanumerics not allowed")
+  					event.preventDefault()
+				}
+
+			}
+		}
+	</script>
+    <div class="h">
+        <p class="na">Diabetic Retinopathy</p></div>
+        <div class="first">
+         <ul>
+             <li><a href="/home"><button>HOME</button></a></li>
+             <li><a href="/list/c"><button>ALL PATIENTS</button></a></li>
+             <li><a href="/add"><button>ADD PATIENT</button></a></li>
+            <!-- <li><a><button>   {% if user.is_authenticated %}
+                    WELCOME {{user.username}}!
+                {% else %}
+                    WELCOME Guest
+                {% endif %}</button></a></li>
+             <li><a href="/logout"><button>LOGOUT</button></a></li>
+
+</ul>--></ul></div>
+<div id="wrap">
+  <form action="/search" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+  <input id="search" name="parameter" type="text" placeholder="Patient Name or Contact number"><input id="search_submit" value="Rechercher" type="submit" onclick="validate(event)">
+  </form>
+</div>
+    <div class="third">
+        <ul>
+        <li><a><button>   {% if user.is_authenticated %}
+                    WELCOME {{user.username}}!
+                {% else %}
+                    WELCOME Guest
+                {% endif %}</button></a></li>
+            <li><a href="/logout"><button>LOGOUT</button></a></li></ul>
+    </div>
+    </header>
+
+</html>

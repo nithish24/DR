@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block header %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'CSS/listall.css' %}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+{% endblock header %}
+{% block body %}
+<div class="but">
+    {% if type == 'c' %}
+    <a href="/list/c"><button class="but1" id="but_com" style="background-color:black">Completed</button></a><a href="/list/p"><button class="but2" id="but_pen" style="background-color:white">Pending</button></a>
+    {% else %}
+    <a href="/list/c"><button class="but1" id="but_com" style="background-color:white">Completed</button></a><a href="/list/p"><button class="but2" id="but_pen" style="background-color:black">Pending</button></a>
+    {% endif %}
+</div>
+<script>
+button_color()
+</script>
+
+{% if all|length > 0 %}
+    <table class="lis" border="1">
+        <tr><th>NAME</th><th>AGE</th><th>GENDER</th><th>PH.NO</th><th>BLOOD GROUP</th><th>ACTION</th></tr>
+        {% for x in all %}
+            <tr>
+                <td>{{x.patient_name}}</td>
+                <td>{{x.patient_age}}</td>
+                <td>{{x.gender}}</td>
+                <td>{{x.phone_no}}</td>
+                <td>{{x.blood_group}}</td>
+                <td><a href="/view/{{x.patient_id}}"><button>View Details</button></a></td>
+            </tr>
+        {% endfor %}
+    </table>
+{% else %}
+{% endif %}
+{% endblock body %}

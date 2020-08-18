@@ -1,0 +1,100 @@
+body
+{
+    background-image: linear-gradient(to right, #2dadf7, #b242fc);
+    height:100%;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  width:40%;
+  border-radius:40px;
+}
+
+.container {
+  background-color:white;
+  border-radius:40px;
+  padding-top:30px;
+  padding-bottom:30px;
+}
+
+.container:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.8);
+}
+
+.user_input
+{
+    font-size:20px;
+    border: none;
+    border-bottom: 2px solid blue;
+    text-align:center;
+    width:100%;
+}
+
+.user_input:focus
+{
+    outline: none;
+    background-color:#dce7fa;
+}
+
+.DR-span
+{
+    margin:5px;
+    font-weight:bold;
+    color:grey;
+    font-size:35px;
+    font-family:Bellota;
+}
+
+.submit-btn
+{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    border-radius:5px;
+    width:100%;
+}
+
+.submit-btn:hover
+{
+    background-color: black;
+}
+
+.messages
+{
+    background-color: red; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 15px;
+    border-radius:5px;
+    width:80%;
+}
+
+.label
+{
+    color: black;
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+    font-family:Bellota;
+    text-align:center;
+    width:100%;
+}
+
+.form-header
+{
+    font-weight:bold;
+    color: grey;
+    text-align: center;
+    display: inline-block;
+    font-size: 30px;
+    font-family:Bellota;
+    width:100%;
+}

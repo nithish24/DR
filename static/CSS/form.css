@@ -1,0 +1,121 @@
+@font-face {
+  font-family: accentu;
+  src: url(ONEDAY.otf);
+}
+body{
+Margin-top:120px;
+Margin-left:25%;
+background-color: teal;
+
+width:50%;
+height:inherit;
+border: 1px solid black;
+border-radius: 5px;
+box-shadow:1px 5px 30px 5px black;
+}
+
+div.form1{
+border:none;
+background-color: teal;
+margin-left:15%;
+}
+div.form1 input[type=text], div.form1 input[type=number], div.form1 select{
+width:180%;
+position: relative;
+color:#FFF;
+background-color: teal;
+border:2px solid white;
+margin-left:-105%;
+margin-top:30%;
+outline:none;
+height:50px;
+font-size:20px;
+}
+
+.tit{
+margin-top:5%;
+padding:10px;
+height:30px;
+background-color: teal;
+text-align: center;
+color:#000;
+font-size:25px;
+font-weight:bold;
+font-family:accentu;
+border-bottom:3px solid white;
+}
+
+html{
+background-color: #00070a;
+background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+}
+
+div.form1 label{
+color:#000;
+float:left;
+font-size:20px;
+font-weight:bold;
+margin-bottom:10px;
+}
+div.form2 label{
+color:#000;
+float:left;
+font-weight:bold;
+font-size:20px;
+margin-bottom:10px;
+}
+
+div.form1 input[type=submit], div.form2 input[type=submit], .ggg button{
+  display:inline;
+  margin-top:5%;
+  margin-left:25%;
+  margin-bottom:5%;
+  width:30%;
+  padding: 10px;
+  margin-right:10%;
+  font-size: 25px;
+  font-weight:bold;
+  font-family:"Times New Roman", Times, serif;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #D68910;
+  background-color: #1a1a1a;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 3px #999;
+}
+.ggg button{
+margin-left:25%;
+}
+
+div.form1 input[type=submit]:active{
+transform:translateY(3px);
+}
+div.form2 input[type=submit]:active, .ggg button:active{
+transform:translateY(3px);
+}
+
+#patient_photo, #diab_report{
+margin:10%;
+}
+
+div.form2{
+border:none;
+background-color: teal;
+margin-left:10%;
+}
+div.form2 input[type=text], div.form2 input[type=number], div.form2 select{
+width:150%;
+position: relative;
+border:none;
+color:white;
+background-color: teal;
+border:2px solid white;
+margin-left:-40%;
+margin-top:30%;
+outline:none;
+height:50px;
+font-size:20px;
+}
+
